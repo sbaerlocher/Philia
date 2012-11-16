@@ -99,9 +99,10 @@ label, input[type=button], input[type=submit], button {
 /* =Layout
 -------------------------------------------------------------- */
 #container {
-	float: left;
-	margin: 0 0 0 300px;
-	min-height: 500px;
+	float: right;
+	//margin: 0 0 0 300px;
+	//min-height: 500px;
+	width: 67%;
 }
 #content {
 	margin: 0 0 0 0px;
@@ -111,9 +112,11 @@ label, input[type=button], input[type=submit], button {
 	float: left;
 }
 #primary{
-	position: absolute;
-	left: 0;
-	top: 150px;
+	//position: absolute;
+	//left: 0;
+	//top: 150px;
+	margin-top: 135px;
+	float: left;
 	width: 275px;
 	border-left: none;
 	border-radius: 0 5px 5px 0;
