@@ -3,7 +3,7 @@ Sutra
 
 Sutra WordPress Theme
 
-=== Sutra 1.1.4 ===
+=== Sutra 1.1.5 ===
 Contributors:  maikunari
 Donate link:  http://maikunari.com
 Tags: two-columns, light, featured-images, fixed-width, custom-menu
