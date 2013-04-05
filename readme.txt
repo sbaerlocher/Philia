@@ -69,6 +69,14 @@ Internet Explorer 7,8,9
 
 === Release Notes ===
 
+
+Version 2.1.1 :
+- Major Update -
+- Added responsive styles & select menu
+- Removed social sharing features from posts, Jetpack handles it much better.
+- 
+
+
 Version 1.1.5 :
 - New submit button & form styling.
 - Default styles for Contact Form 7 plugin: http://wordpress.org/extend/plugins/contact-form-7/ 

@@ -78,25 +78,23 @@
 							echo wp_get_attachment_image( $post->ID, array( $attachment_size, 9999 ) ); // filterable image width with, essentially, no limit for image height.
 						?></a></p>
 
-						<div id="nav-below" class="navigation">
-							<div class="nav-previous"><?php previous_image_link( false ); ?></div>
-							<div class="nav-next"><?php next_image_link( false ); ?></div>
-						</div><!-- #nav-below -->
+
 <?php else : ?>
 						<a href="<?php echo wp_get_attachment_url(); ?>" title="<?php echo esc_attr( get_the_title() ); ?>" rel="attachment"><?php echo basename( get_permalink() ); ?></a>
 <?php endif; ?>
 						</div><!-- .entry-attachment -->
-						<div class="entry-caption"><?php if ( !empty( $post->post_excerpt ) ) the_excerpt(); ?></div>
+						<div class="entry-caption">
+							<?php if ( !empty( $post->post_excerpt ) ) the_excerpt(); ?>
+						</div>
+						
+						<div id="nav-below" class="navigation">
+							<div class="nav-previous"><?php previous_image_link( false ); ?></div>
+							<div class="nav-next"><?php next_image_link( false ); ?></div>
+						</div><!-- #nav-below -->
 
-<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'sutra' ) ); ?>
-<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'sutra' ), 'after' => '</div>' ) ); ?>
+
 
 					</div><!-- .entry-content -->
-
-					<div class="entry-utility">
-						<?php sutra_posted_in(); ?>
-						<?php edit_post_link( __( 'Edit', 'sutra' ), ' <span class="edit-link">', '</span>' ); ?>
-					</div><!-- .entry-utility -->
 				</div><!-- #post-## -->
 
 <?php comments_template(); ?>

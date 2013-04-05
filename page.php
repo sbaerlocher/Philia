@@ -3,9 +3,7 @@
 		<div id="container">
 			<div id="content" role="main">
 
-<?php if ( function_exists( 'meteor_slideshow' ) ) { meteor_slideshow(); } ?>
-
-<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
+				<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 
 				<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 					<?php if ( is_front_page() ) { ?>
@@ -21,7 +19,7 @@
 					</div><!-- .entry-content -->
 				</div><!-- #post-## -->
 
-<?php endwhile; ?>
+				<?php endwhile; ?>
 
 			</div><!-- #content -->
 		</div><!-- #container -->
