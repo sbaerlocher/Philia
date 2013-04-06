@@ -44,7 +44,6 @@
 		<div id="header">					
 			<h1 id="site-title"><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 			<div id="site-description"><?php bloginfo( 'description' ); ?></div>
-
 			<?php // shows header image if uploaded 
 			$header_image = get_header_image();
 			if ( ! empty( $header_image ) ) : ?>
@@ -52,6 +51,10 @@
 			<?php endif; ?>
 			
 			<?php // mobile menu 
-		    wp_nav_menu( array( 'theme_location' => 'primary' )); 
+		    wp_nav_menu( array( 
+		    	'theme_location' => 'primary', 
+		    	'menu_id' => 'mobile-menu',
+		    	'menu_class' => 'mobile-menu'
+		    )); 
 			?>
 		</div><!-- #header -->

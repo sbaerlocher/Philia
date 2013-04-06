@@ -138,7 +138,7 @@ ul {
 }
 ol {
 	list-style: decimal;
-	margin: 0 0 1.6emx 1.5em;
+	margin: 0 0 1.6em 1.5em;
 }
 ol ol {
 	list-style: upper-alpha;
@@ -217,12 +217,15 @@ sub {
 }
 input[type="text"],
 textarea {
-	background: #f9f9f9;
 	border: 1px solid #ccc;
 	box-shadow: inset 1px 1px 1px rgba(0,0,0,0.1);
 	-moz-box-shadow: inset 1px 1px 1px rgba(0,0,0,0.1);
 	-webkit-box-shadow: inset 1px 1px 1px rgba(0,0,0,0.1);
-	padding: 2px;
+	padding: .5em;
+	color: #777 !important;
+	font-size: 1em !important;
+	line-height: 1.1em;
+	background: #FFF !important;
 }
 
 
@@ -686,12 +689,10 @@ h3#comments-title {
 
 .commentlist li.comment {
 	border-bottom: 1px solid #a6a6a6;
-	// line-height: 1em;
 	margin: 0 0 1em 0;
 	padding: 0;
 	position: relative;
 	overflow: hidden;
-	//display: block;
 }
 
 .commentlist li:last-child {
@@ -726,7 +727,6 @@ h3#comments-title {
 
 .comment-content {
 	overflow: hidden;
-	// width: 88%;
 }
 
 
@@ -824,8 +824,6 @@ input[type=submit] {
 	margin: 1em 0;
 	overflow: hidden;
 	position: relative;
-	//border-top: 1px solid #d5d5d5;
-	//border-top: 1px solid rgba(0,0,0,0.2);
 }
 #respond p {
 	margin: 0;
@@ -1177,19 +1175,11 @@ h3#reply-title {
 	}
 }
 
-
 /* hide mobile menu by default */
-.select-menu,
-.selectnav {
+.selectnav,
+.mobile-menu { 
 	display: none;
 }
-
-.js #menu-top-nav { 
-	position: absolute !important;
-	clip: rect(1px 1px 1px 1px); /* IE7 */
-	clip: rect(1px, 1px, 1px, 1px);
-}
-
 
 /* from mobile up to tablet portrait view */
 @media only screen and (max-width: 799px) {

@@ -1,9 +1,9 @@
-=== Sutra 1.1.4 ===
+=== Sutra 2.0 ===
 Contributors:  maikunari
 Donate link:  http://maikunari.com
 Tags: two-columns, light, featured-images, fixed-width, custom-menu
 Requires: 3.0
-Tested up to: 3.3.1
+Tested up to: 3.5.1
 
 Minimal theme focussed on simplicity, putting your writing front and center. 
 
@@ -20,14 +20,8 @@ visit this page: http://codex.wordpress.org/Getting_Started_with_WordPress
 
 A) Using your own Logo
 
-***  The optimum image size is 250px x 80px
-
-1. Upload an image of the above dimensions to the themes "images" folder.
-2. Open style.css in a text-editor and scroll down the the section marked "Header".
-3. Beneath the section that says " If you would like to use a logo … " remove the comment
-marks ( /* and */ ) around the section that starts with #site-title.
-
-( There is an example logo uploaded already for you, just delete it or replace it with your own. )
+Upload an image to show beneath the header text at Appearance > Header.
+From the same screen you can hide the header text if desired.
 
 
 B) Menus & Widgets
@@ -41,7 +35,7 @@ To select what items you want to include in this menu visit Appearance > Menus, 
 2. In the theme locations box (top left of menu page) select the name of your menu from the drop-down list
 beneath the words "Primary Navigation", press Save and you are all set.
 
-Adding Widgets to the "Primary Widget Area" section will remove the Category & Archives sections, 
+Adding Widgets to the "Widgets" section will remove the Category & Archives sections, 
 the Menu will remain.
 
 
@@ -62,19 +56,24 @@ then the page numbers will automatically appear.
 
 === Browser Support ===
 
-Tested in Firefox 3+
-Safari 4, 
-Internet Explorer 7,8,9
+Tested in Firefox 20
+Safari 6, 
+Internet Explorer 8,9,10
 
 
 === Release Notes ===
 
 
-Version 2.1.1 :
-- Major Update -
-- Added responsive styles & select menu
-- Removed social sharing features from posts, Jetpack handles it much better.
-- 
+Version 2.0:
+- Major Update
+- added responsive styles & select menu.
+- removed social sharing features from posts, Jetpack handles it much better.
+- major css rewrite, removed most px based sizes.
+- added ability to upload a header image from: Appearance > Header.
+- added ability to change blog title color.
+- added .button class.
+- updated Contact Form 7 error message styles.
+- updated form input styles.
 
 
 Version 1.1.5 :

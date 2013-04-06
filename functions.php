@@ -1,9 +1,4 @@
-<?php
-/*
-Sutra 2.0 
-030513
-maikunari.com
-*/
+<?php /* Sutra 2.0 // functions.php */ 
 
 // Tell WordPress to run sutra_setup() when the 'after_setup_theme' hook is run. 
 add_action( 'after_setup_theme', 'sutra_setup' );
