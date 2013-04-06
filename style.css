@@ -269,7 +269,6 @@ hr {
 h1#site-title {
 	font-family: "minion-pro-1", "minion-pro-2", Palatino, Georgia, "Times New Roman", serif;
 	font-size: 2.6em;
-	margin: 0 .5em;
 	text-shadow: 0 1px 0 #fff;
 }
 
@@ -282,7 +281,7 @@ h1#site-title {
 #site-description {
 	font-style: italic;
 	font-size: 1.2em;
-	margin: 0 0 .5em 1em;
+	margin: 0 0 .5em 0;
 	text-shadow: 0 1px 0 #fff;
 }
 
@@ -416,13 +415,24 @@ h1#site-title {
 	font-weight: normal;
 	padding: 0.5em 0.75em;
 	text-decoration: none;
+	-webkit-transition: all 0.3s ease-in;
+	-moz-transition: all 0.3s ease-in;
+	-o-transition: all 0.3s ease-in;
+	transition: all 0.3s ease-in;
 }
 .home .sticky .page-link a {
-	background: #d9e8f7;
+	background: #999;
+	background: rgba(0,0,0,0.1);
 }
+
+.home .sticky .page-link a:hover {
+	color: #fff;
+	background: rgba(0,0,0,0.4);
+}
+
 .page-link a:active,
 .page-link a:hover {
-	color: #5485e4;
+	color: #000;
 }
 body.page .edit-link {
 	clear: both;
@@ -466,7 +476,7 @@ body.page .edit-link {
 .entry-utility {
 	clear: both;
 	color: #888;
-	font-size: .65em;
+	font-size: .8em;
 }
 .entry-meta a,
 .entry-utility a {
