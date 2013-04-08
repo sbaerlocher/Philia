@@ -176,9 +176,6 @@ function add_child_theme_scripts(){
 	// selectnav.js - https://github.com/lukaszfiszer/selectnav.js  
 	wp_enqueue_script( 'selectnav', get_template_directory_uri() . '/js/selectnav.min.js', array( 'customize-preview' ), '20130405', true );
 
-	// theme customizer from Twenty Twelve    
-	wp_enqueue_script( 'sutra-customizer', get_template_directory_uri() . '/js/theme-customizer.js', array( 'customize-preview' ), '20130404', true );
-
 	// sutra.js
 	wp_enqueue_script( 'sutra',  get_stylesheet_directory_uri() . '/js/sutra.js', array( 'jquery' ), '20130315', true ); 
 }
@@ -270,6 +267,14 @@ function sutra_custom_excerpt_more( $output ) {
 	return $output;
 }
 add_filter( 'get_the_excerpt', 'sutra_custom_excerpt_more' );
+
+// remove more link scroll
+function remove_more_link_scroll( $link ) {
+	$link = preg_replace( '|#more-[0-9]+|', '', $link );
+	return $link;
+}
+add_filter( 'the_content_more_link', 'remove_more_link_scroll' );
+
 
 // Remove inline styles printed when the gallery shortcode is used.
 function sutra_remove_gallery_css( $css ) {

@@ -8,12 +8,6 @@ selectnav('mobile-menu');
 
 jQuery( document ).ready( function( $ ) { 
 	
-	// equalize comumn height // thanks to http://blog.huidesign.com/make-equal-height-columns-by-jquery/
-	var leftHeight = $("#sidebar").height();
-	var rightHeight = $("#container").height();
-	    if (leftHeight > rightHeight){ $("#container").height(leftHeight)}
-	       else{ $("#sidebar").height(rightHeight)};
-	
 	// remove border-bottom on last post
 	jQuery(".post").last().css('border-bottom','none');
 	
