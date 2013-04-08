@@ -57,7 +57,7 @@ then the page numbers will automatically appear.
 === Browser Support ===
 
 Tested in Firefox 20
-Safari 6, 
+Safari 6
 Internet Explorer 8,9,10
 
 
