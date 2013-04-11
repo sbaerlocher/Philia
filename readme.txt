@@ -1,4 +1,4 @@
-=== Sutra 2.0 ===
+=== Sutra 2.1 ===
 Contributors:  maikunari
 Donate link:  http://maikunari.com
 Tags: two-columns, light, featured-images, fixed-width, custom-menu
@@ -62,6 +62,9 @@ Internet Explorer 8,9,10
 
 
 === Release Notes ===
+
+Version 2.1
+- Updated theme description.
 
 
 Version 2.0:
