@@ -18,7 +18,7 @@
 					<h1 class="entry-title"><?php the_title(); ?></h1>
 					
 					<div class="entry-meta">
-						<?php sutra_posted_on(); ?>
+						<?php philia_posted_on(); ?>
 					</div><!-- .entry-meta -->
 
 					<div class="entry-content">
@@ -33,13 +33,13 @@
 						<?php the_content(); ?>
 						
 						
-						<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'sutra' ), 'after' => '</div>' ) ); ?>
+						<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'philia' ), 'after' => '</div>' ) ); ?>
 					</div><!-- .entry-content -->
 
 					<div class="entry-utility">
 						<?php if ( count( get_the_category() ) ) : ?>
 							<span class="cat-links">
-								<?php printf( __( '<span class="%1$s">Posted in</span> %2$s', 'sutra' ), 'entry-utility-prep entry-utility-prep-cat-links', get_the_category_list( ', ' ) ); ?>
+								<?php printf( __( '<span class="%1$s">Posted in</span> %2$s', 'philia' ), 'entry-utility-prep entry-utility-prep-cat-links', get_the_category_list( ', ' ) ); ?>
 							</span>
 							<span class="meta-sep">|</span>
 						<?php endif; ?>
@@ -48,11 +48,11 @@
 							if ( $tags_list ):
 						?>
 							<span class="tag-links">
-								<?php printf( __( '<span class="%1$s">Tagged</span> %2$s', 'sutra' ), 'entry-utility-prep entry-utility-prep-tag-links', $tags_list ); ?>
+								<?php printf( __( '<span class="%1$s">Tagged</span> %2$s', 'philia' ), 'entry-utility-prep entry-utility-prep-tag-links', $tags_list ); ?>
 							</span>
 							<span class="meta-sep">|</span>
 						<?php endif; ?>
-						<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'sutra' ), __( '1 Comment', 'sutra' ), __( '% Comments', 'sutra' ) ); ?></span>
+						<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'philia' ), __( '1 Comment', 'philia' ), __( '% Comments', 'philia' ) ); ?></span>
 					</div><!-- .entry-utility -->
 				</div><!-- #post-## -->
 

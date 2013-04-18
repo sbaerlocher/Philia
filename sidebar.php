@@ -29,7 +29,7 @@
 				</li>		
 			
 				<li id="archives" class="widget-container">
-					<h3 class="widget-title"><?php _e( 'Archives', 'sutra' ); ?></h3>
+					<h3 class="widget-title"><?php _e( 'Archives', 'philia' ); ?></h3>
 					<ul>
 						<?php wp_get_archives( 'type=monthly' ); ?>
 					</ul>

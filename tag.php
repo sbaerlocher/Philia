@@ -11,7 +11,7 @@ get_header(); ?>
 			<div id="content" role="main">
 
 				<h1 class="page-title"><?php
-					printf( __( 'Tag Archives: %s', 'sutra' ), '<span>' . single_tag_title( '', false ) . '</span>' );
+					printf( __( 'Tag Archives: %s', 'philia' ), '<span>' . single_tag_title( '', false ) . '</span>' );
 				?></h1>
 
 <?php get_template_part( 'loop', 'tag' ); ?>
