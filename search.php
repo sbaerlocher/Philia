@@ -1,4 +1,11 @@
-<?php get_header(); ?>
+<?php
+/**
+ * The template for displaying Search Results pages.
+ *
+ * @package Philia
+ * @since Philia
+ */
+?>
 
 		<div id="container">
 			<div id="content" role="main">

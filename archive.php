@@ -1,4 +1,14 @@
-<?php get_header(); ?>
+<?php
+/**
+ * The template for displaying Archive pages.
+ *
+ * Learn more: http://codex.wordpress.org/Template_Hierarchy
+ *
+ * @package Philia
+ * @since Philia
+ */
+
+get_header(); ?>
 
 		<div id="container">
 			<div id="content" role="main">
