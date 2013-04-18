@@ -7,7 +7,7 @@
 
 			<div id="comments">
 <?php if ( post_password_required() ) : ?>
-				<p class="nopassword"><?php _e( 'This post is password protected. Enter the password to view any comments.', 'sutra' ); ?></p>
+				<p class="nopassword"><?php _e( 'This post is password protected. Enter the password to view any comments.', 'philia' ); ?></p>
 			</div><!-- #comments -->
 <?php
 		/* Stop the rest of comments.php from being processed,
@@ -21,33 +21,33 @@
 
 <?php if ( have_comments() ) : ?>
 			<h3 id="comments-title"><?php
-			printf( _n( 'One Response to %2$s', '%1$s Responses to %2$s', get_comments_number(), 'sutra' ),
+			printf( _n( 'One Response to %2$s', '%1$s Responses to %2$s', get_comments_number(), 'philia' ),
 			number_format_i18n( get_comments_number() ), '<em>' . get_the_title() . '</em>' );
 			?></h3>
 
 <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
 			<div class="navigation">
-				<div class="nav-previous"><?php previous_comments_link( __( '<span class="meta-nav">&larr;</span> Older Comments', 'sutra' ) ); ?></div>
-				<div class="nav-next"><?php next_comments_link( __( 'Newer Comments <span class="meta-nav">&rarr;</span>', 'sutra' ) ); ?></div>
+				<div class="nav-previous"><?php previous_comments_link( __( '<span class="meta-nav">&larr;</span> Older Comments', 'philia' ) ); ?></div>
+				<div class="nav-next"><?php next_comments_link( __( 'Newer Comments <span class="meta-nav">&rarr;</span>', 'philia' ) ); ?></div>
 			</div> <!-- .navigation -->
 <?php endif; // check for comment navigation ?>
 
 			<ol class="commentlist">
 				<?php
 					/* Loop through and list the comments. Tell wp_list_comments()
-					 * to use sutra_comment() to format the comments.
+					 * to use philia_comment() to format the comments.
 					 * If you want to overload this in a child theme then you can
-					 * define sutra_comment() and that will be used instead.
-					 * See sutra_comment() in sutra/functions.php for more.
+					 * define philia_comment() and that will be used instead.
+					 * See philia_comment() in philia/functions.php for more.
 					 */
-					wp_list_comments( array( 'callback' => 'sutra_comment' ) );
+					wp_list_comments( array( 'callback' => 'philia_comment' ) );
 				?>
 			</ol>
 
 <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
 			<div class="navigation">
-				<div class="nav-previous"><?php previous_comments_link( __( '<span class="meta-nav">&larr;</span> Older Comments', 'sutra' ) ); ?></div>
-				<div class="nav-next"><?php next_comments_link( __( 'Newer Comments <span class="meta-nav">&rarr;</span>', 'sutra' ) ); ?></div>
+				<div class="nav-previous"><?php previous_comments_link( __( '<span class="meta-nav">&larr;</span> Older Comments', 'philia' ) ); ?></div>
+				<div class="nav-next"><?php next_comments_link( __( 'Newer Comments <span class="meta-nav">&rarr;</span>', 'philia' ) ); ?></div>
 			</div><!-- .navigation -->
 <?php endif; // check for comment navigation ?>
 
@@ -55,7 +55,7 @@
 
 	if ( ! comments_open() ) :
 ?>
-	<p class="nocomments"><?php _e( 'Comments are closed.', 'sutra' ); ?></p>
+	<p class="nocomments"><?php _e( 'Comments are closed.', 'philia' ); ?></p>
 <?php endif; // end ! comments_open() ?>
 
 <?php endif; // end have_comments() ?>

@@ -10,7 +10,7 @@
 			<div id="content" role="main">
 
 				<h1 class="page-title"><?php
-					printf( __( 'Category Archives: %s', 'sutra' ), '<span>' . single_cat_title( '', false ) . '</span>' );
+					printf( __( 'Category Archives: %s', 'philia' ), '<span>' . single_cat_title( '', false ) . '</span>' );
 				?></h1>
 				<?php
 					$category_description = category_description();

@@ -8,9 +8,9 @@
 <?php /* If there are no posts to display, such as an empty archive page */ ?>
 <?php if ( ! have_posts() ) : ?>
 	<div id="post-0" class="post error404 not-found">
-		<h1 class="entry-title"><?php _e( 'Not Found', 'sutra' ); ?></h1>
+		<h1 class="entry-title"><?php _e( 'Not Found', 'philia' ); ?></h1>
 		<div class="entry-content">
-			<p><?php _e( 'Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post.', 'sutra' ); ?></p>
+			<p><?php _e( 'Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post.', 'philia' ); ?></p>
 			<?php get_search_form(); ?>
 		</div><!-- .entry-content -->
 	</div><!-- #post-0 -->
@@ -21,12 +21,12 @@
 
 <?php /* How to display posts in the Gallery category. */ ?>
 
-	<?php if ( in_category( _x('gallery', 'gallery category slug', 'sutra') ) ) : ?>
+	<?php if ( in_category( _x('gallery', 'gallery category slug', 'philia') ) ) : ?>
 		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-			<h2 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'sutra' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
+			<h2 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'philia' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
 
 			<div class="entry-meta">
-				<?php sutra_posted_on(); ?>
+				<?php philia_posted_on(); ?>
 			</div><!-- .entry-meta -->
 
 			<div class="entry-content">
@@ -43,8 +43,8 @@
 					<div class="gallery-thumb">
 						<a class="size-thumbnail" href="<?php the_permalink(); ?>"><?php echo $image_img_tag; ?></a>
 					</div><!-- .gallery-thumb -->
-					<p><em><?php printf( __( 'This gallery contains <a %1$s>%2$s photos</a>.', 'sutra' ),
-							'href="' . get_permalink() . '" title="' . sprintf( esc_attr__( 'Permalink to %s', 'sutra' ), the_title_attribute( 'echo=0' ) ) . '" rel="bookmark"',
+					<p><em><?php printf( __( 'This gallery contains <a %1$s>%2$s photos</a>.', 'philia' ),
+							'href="' . get_permalink() . '" title="' . sprintf( esc_attr__( 'Permalink to %s', 'philia' ), the_title_attribute( 'echo=0' ) ) . '" rel="bookmark"',
 							$total_images
 						); ?></em></p>
 			<?php endif; ?>
@@ -53,9 +53,9 @@
 			</div><!-- .entry-content -->
 
 			<div class="entry-utility">
-				<a href="<?php echo get_term_link( _x('gallery', 'gallery category slug', 'sutra'), 'category' ); ?>" title="<?php esc_attr_e( 'View posts in the Gallery category', 'sutra' ); ?>"><?php _e( 'More Galleries', 'sutra' ); ?></a>
+				<a href="<?php echo get_term_link( _x('gallery', 'gallery category slug', 'philia'), 'category' ); ?>" title="<?php esc_attr_e( 'View posts in the Gallery category', 'philia' ); ?>"><?php _e( 'More Galleries', 'philia' ); ?></a>
 				<span class="meta-sep">|</span>
-				<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'sutra' ), __( '1 Comment', 'sutra' ), __( '% Comments', 'sutra' ) ); ?></span>
+				<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'philia' ), __( '1 Comment', 'philia' ), __( '% Comments', 'philia' ) ); ?></span>
 			</div><!-- .entry-utility -->
 		</div><!-- #post-## -->
 
@@ -63,15 +63,15 @@
 
 	<?php else : ?>
 		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-			<h2 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'sutra' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
+			<h2 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'philia' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
 
 			<div class="entry-meta">
-				<?php sutra_posted_on(); ?>
+				<?php philia_posted_on(); ?>
 			</div><!-- .entry-meta -->
 
 	<?php if ( is_archive() || is_search() ) : // Only display excerpts for archives and search. ?>
 			<div class="entry-summary">
-				<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'sutra' ) ); ?>
+				<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'philia' ) ); ?>
 			</div><!-- .entry-summary -->
 	<?php else : ?>
 			<div class="entry-content">
@@ -80,15 +80,15 @@
 					<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
 				</div>
 			<?php } ?>
-				<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'sutra' ) ); ?>
-				<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'sutra' ), 'after' => '</div>' ) ); ?>
+				<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'philia' ) ); ?>
+				<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'philia' ), 'after' => '</div>' ) ); ?>
 			</div><!-- .entry-content -->
 	<?php endif; ?>
 
 			<div class="entry-utility">
 				<?php if ( count( get_the_category() ) ) : ?>
 					<span class="cat-links">
-						<?php printf( __( '<span class="%1$s">Posted in</span> %2$s', 'sutra' ), 'entry-utility-prep entry-utility-prep-cat-links', get_the_category_list( ', ' ) ); ?>
+						<?php printf( __( '<span class="%1$s">Posted in</span> %2$s', 'philia' ), 'entry-utility-prep entry-utility-prep-cat-links', get_the_category_list( ', ' ) ); ?>
 					</span>
 					<span class="meta-sep">|</span>
 				<?php endif; ?>
@@ -97,11 +97,11 @@
 					if ( $tags_list ):
 				?>
 					<span class="tag-links">
-						<?php printf( __( '<span class="%1$s">Tagged</span> %2$s', 'sutra' ), 'entry-utility-prep entry-utility-prep-tag-links', $tags_list ); ?>
+						<?php printf( __( '<span class="%1$s">Tagged</span> %2$s', 'philia' ), 'entry-utility-prep entry-utility-prep-tag-links', $tags_list ); ?>
 					</span>
 					<span class="meta-sep">|</span>
 				<?php endif; ?>
-				<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'sutra' ), __( '1 Comment', 'sutra' ), __( '% Comments', 'sutra' ) ); ?></span>
+				<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'philia' ), __( '1 Comment', 'philia' ), __( '% Comments', 'philia' ) ); ?></span>
 			</div><!-- .entry-utility -->
 		</div><!-- #post-## -->
 
@@ -112,5 +112,5 @@
 
 <?php /* Display navigation to next/previous pages when applicable */ ?>
 <div id="pagination">
-	<?php sutra_navigation(); ?>
+	<?php philia_navigation(); ?>
 </div>

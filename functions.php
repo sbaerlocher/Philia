@@ -6,10 +6,10 @@
  * @since Philia
  */
 
-// Tell WordPress to run sutra_setup() when the 'after_setup_theme' hook is run. 
-add_action( 'after_setup_theme', 'sutra_setup' );
+// Tell WordPress to run philia_setup() when the 'after_setup_theme' hook is run. 
+add_action( 'after_setup_theme', 'philia_setup' );
 
-function sutra_setup() {
+function philia_setup() {
 	// This theme styles the visual editor with editor-style.css to match the theme style.
 	add_editor_style();
 	
@@ -23,7 +23,7 @@ function sutra_setup() {
 	
 	// Make theme available for translation
 	// Translations can be filed in the /languages/ directory
-	load_theme_textdomain( 'sutra', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'philia', get_template_directory() . '/languages' );
 
 	$locale = get_locale();
 	$locale_file = get_template_directory()  . "/languages/$locale.php";
@@ -32,7 +32,7 @@ function sutra_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => __( 'Primary Navigation', 'sutra' )
+		'primary' => __( 'Primary Navigation', 'philia' )
 	) );
 	
 	// This theme allows users to set a custom background
@@ -43,7 +43,7 @@ function sutra_setup() {
 }
 
 // add custom header functionality 
-function sutra_custom_header_setup() {
+function philia_custom_header_setup() {
 	$args = array(
 		// Text color and image (empty to use none).
 		'default-text-color'     => '9C0001',
@@ -64,20 +64,20 @@ function sutra_custom_header_setup() {
 		'random-default'         => false,
 
 		// Callbacks for styling the header and the admin preview.
-		'wp-head-callback'       => 'sutra_header_style',
-		'admin-head-callback'    => 'sutra_admin_header_style',
-		'admin-preview-callback' => 'sutra_admin_header_image',
+		'wp-head-callback'       => 'philia_header_style',
+		'admin-head-callback'    => 'philia_admin_header_style',
+		'admin-preview-callback' => 'philia_admin_header_image',
 	);
 	add_theme_support( 'custom-header', $args );
 }
-add_action( 'after_setup_theme', 'sutra_custom_header_setup' );
+add_action( 'after_setup_theme', 'philia_custom_header_setup' );
 
 
 /*  
 	Styles the header text displayed on the site
 	from Twenty Twelve
 */
-function sutra_header_style() {
+function philia_header_style() {
 	$text_color = get_header_textcolor();
 
 	// If no custom options for text are set, let's bail
@@ -111,9 +111,9 @@ function sutra_header_style() {
 /**
  * Styles the header image displayed on the Appearance > Header admin panel.
  *
- * @since Sutra 1.0
+ * @since philia 
  */
-function sutra_admin_header_style() {
+function philia_admin_header_style() {
 ?>
 	<style type="text/css">
 	.appearance_page_custom-header #headimg {
@@ -161,7 +161,7 @@ function sutra_admin_header_style() {
 	Outputs markup to be displayed on the Appearance > Header admin panel.
 	This callback overrides the default markup displayed there.
 */
-function sutra_admin_header_image() {
+function philia_admin_header_image() {
 	?>
 	<div id="headimg">
 		<?php
@@ -185,14 +185,14 @@ function add_child_theme_scripts(){
 	// selectnav.js - https://github.com/lukaszfiszer/selectnav.js  
 	wp_enqueue_script( 'selectnav', get_template_directory_uri() . '/js/selectnav.min.js', array( 'customize-preview' ), '20130405', true );
 
-	// sutra.js
-	wp_enqueue_script( 'sutra',  get_stylesheet_directory_uri() . '/js/sutra.js', array( 'jquery' ), '20130315', true ); 
+	// philia.js
+	wp_enqueue_script( 'philia',  get_stylesheet_directory_uri() . '/js/philia.js', array( 'jquery' ), '20130315', true ); 
 }
 add_action('init', 'add_child_theme_scripts');
 
 // enqueue google fonts
-add_action('wp_head', 'sutra_my_google_webfont', 5); // hook my_google_webfont() into wp_head()
-function sutra_my_google_webfont(){
+add_action('wp_head', 'philia_my_google_webfont', 5); // hook my_google_webfont() into wp_head()
+function philia_my_google_webfont(){
 	wp_register_style('OFL+Sorts+Mill+Goudy+TT', 'http://fonts.googleapis.com/css?family=OFL+Sorts+Mill+Goudy+TT', array(), false, 'screen'); // register the stylesheet
 	wp_enqueue_style('OFL+Sorts+Mill+Goudy+TT'); // print the stylesheet into page
 }
@@ -204,12 +204,12 @@ add_theme_support( 'infinite-scroll', array(
 ) );
 
 // Add first & last class to navigation 
-function sutra_add_markup_pages($output) {
+function philia_add_markup_pages($output) {
     $output= preg_replace('/menu-item/', 'first-menu-item menu-item', $output, 1);
 	$output=substr_replace($output, "last-menu-item menu-item", strripos($output, "menu-item"), strlen("menu-item"));
     return $output;
 }
-add_filter('wp_nav_menu', 'sutra_add_markup_pages');
+add_filter('wp_nav_menu', 'philia_add_markup_pages');
 
 // Various Post Thumbnail Sizes
 add_image_size( 'large', 640, 640, true ); // Large thumbnails
@@ -218,12 +218,12 @@ add_image_size( 'small', 250, 250, true ); // Small thumbnails
 add_image_size( 'blog', 9999, 175, true ); // Small thumbnails
 
 // Register widgetized areas, including two sidebars and four widget-ready columns in the footer.
-function sutra_widgets_init() {
+function philia_widgets_init() {
 	// Area 1, located at the top of the sidebar.
 	register_sidebar( array(
-		'name' => __( 'Widgets', 'sutra' ),
+		'name' => __( 'Widgets', 'philia' ),
 		'id' => 'primary-widget-area',
-		'description' => __( 'The primary widget area', 'sutra' ),
+		'description' => __( 'The primary widget area', 'philia' ),
 		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
 		'after_widget' => '</li>',
 		'before_title' => '<h3 class="widget-title">',
@@ -231,11 +231,11 @@ function sutra_widgets_init() {
 	) );
 }
 
-// Register sidebars by running sutra_widgets_init() on the widgets_init hook. 
-add_action( 'widgets_init', 'sutra_widgets_init' );
+// Register sidebars by running philia_widgets_init() on the widgets_init hook. 
+add_action( 'widgets_init', 'philia_widgets_init' );
 
 // category id in body and post class 
-function sutra_category_id_class($classes) {
+function philia_category_id_class($classes) {
 	global $post;
 	if( isset( $post ) ):
 		foreach((get_the_category($post->ID)) as $category)
@@ -245,37 +245,37 @@ function sutra_category_id_class($classes) {
 }
 
 // Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link.
-function sutra_page_menu_args( $args ) {
+function philia_page_menu_args( $args ) {
 	$args['show_home'] = true;
 	return $args;
 }
-add_filter( 'wp_page_menu_args', 'sutra_page_menu_args' );
+add_filter( 'wp_page_menu_args', 'philia_page_menu_args' );
 
 // Sets the post excerpt length to 40 characters.
-function sutra_excerpt_length( $length ) {
+function philia_excerpt_length( $length ) {
 	return 80;
 }
-add_filter( 'excerpt_length', 'sutra_excerpt_length' );
+add_filter( 'excerpt_length', 'philia_excerpt_length' );
 
 // Returns a "Continue Reading" link for excerpts
-function sutra_continue_reading_link() {
-	return ' <a href="'. get_permalink() . '">' . __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'sutra' ) . '</a>';
+function philia_continue_reading_link() {
+	return ' <a href="'. get_permalink() . '">' . __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'philia' ) . '</a>';
 }
 
-// Replaces "[...]" (appended to automatically generated excerpts) with an ellipsis and sutra_continue_reading_link().
-function sutra_auto_excerpt_more( $more ) {
-	return ' &hellip;' . sutra_continue_reading_link();
+// Replaces "[...]" (appended to automatically generated excerpts) with an ellipsis and philia_continue_reading_link().
+function philia_auto_excerpt_more( $more ) {
+	return ' &hellip;' . philia_continue_reading_link();
 }
-add_filter( 'excerpt_more', 'sutra_auto_excerpt_more' );
+add_filter( 'excerpt_more', 'philia_auto_excerpt_more' );
 
 // Adds a pretty "Continue Reading" link to custom post excerpts.
-function sutra_custom_excerpt_more( $output ) {
+function philia_custom_excerpt_more( $output ) {
 	if ( has_excerpt() && ! is_attachment() ) {
-		$output .= sutra_continue_reading_link();
+		$output .= philia_continue_reading_link();
 	}
 	return $output;
 }
-add_filter( 'get_the_excerpt', 'sutra_custom_excerpt_more' );
+add_filter( 'get_the_excerpt', 'philia_custom_excerpt_more' );
 
 // remove more link scroll
 function remove_more_link_scroll( $link ) {
@@ -286,16 +286,16 @@ add_filter( 'the_content_more_link', 'remove_more_link_scroll' );
 
 
 // Remove inline styles printed when the gallery shortcode is used.
-function sutra_remove_gallery_css( $css ) {
+function philia_remove_gallery_css( $css ) {
 	return preg_replace( "#<style type='text/css'>(.*?)</style>#s", '', $css );
 }
-add_filter( 'gallery_style', 'sutra_remove_gallery_css' );
+add_filter( 'gallery_style', 'philia_remove_gallery_css' );
 
 /*
 	Template for comments and pingbacks.
 	Used as a callback by wp_list_comments() for displaying the comments.
 */
-function sutra_comment( $comment, $args, $depth ) {
+function philia_comment( $comment, $args, $depth ) {
 	$GLOBALS['comment'] = $comment;
 	switch ( $comment->comment_type ) :
 		case '' :
@@ -311,18 +311,18 @@ function sutra_comment( $comment, $args, $depth ) {
 		
 			<div class="comment-author vcard">
 				
-				<?php printf( __( '%s <span class="says">says:</span>', 'sutra' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
+				<?php printf( __( '%s <span class="says">says:</span>', 'philia' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
 			</div><!-- .comment-author .vcard -->
 			
 			<?php if ( $comment->comment_approved == '0' ) : ?>
-				<em><?php _e( 'Your comment is awaiting moderation.', 'sutra' ); ?></em>
+				<em><?php _e( 'Your comment is awaiting moderation.', 'philia' ); ?></em>
 				<br />
 			<?php endif; ?>
 	
 			<div class="comment-meta commentmetadata"><a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>">
 				<?php
 					/* translators: 1: date, 2: time */
-					printf( __( '%1$s at %2$s', 'sutra' ), get_comment_date(),  get_comment_time() ); ?></a><?php edit_comment_link( __( '(Edit)', 'sutra' ), ' ' );
+					printf( __( '%1$s at %2$s', 'philia' ), get_comment_date(),  get_comment_time() ); ?></a><?php edit_comment_link( __( '(Edit)', 'philia' ), ' ' );
 				?>
 			</div><!-- .comment-meta .commentmetadata -->
 	
@@ -342,22 +342,22 @@ function sutra_comment( $comment, $args, $depth ) {
 		case 'trackback' :
 	?>
 	<li class="post pingback">
-		<p><?php _e( 'Pingback:', 'sutra' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __('(Edit)', 'sutra'), ' ' ); ?></p>
+		<p><?php _e( 'Pingback:', 'philia' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __('(Edit)', 'philia'), ' ' ); ?></p>
 	<?php
 			break;
 	endswitch;
 }
 
 // Removes the default styles that are packaged with the Recent Comments widget.
-function sutra_remove_recent_comments_style() {
+function philia_remove_recent_comments_style() {
 	global $wp_widget_factory;
 	remove_action( 'wp_head', array( $wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style' ) );
 }
-add_action( 'widgets_init', 'sutra_remove_recent_comments_style' );
+add_action( 'widgets_init', 'philia_remove_recent_comments_style' );
 
 // Prints HTML with meta information for the current post—date/time and author.
-function sutra_posted_on() {
-	printf( __( '<span class="%1$s">Posted on</span> %2$s <span class="meta-sep">by</span> %3$s', 'sutra' ),
+function philia_posted_on() {
+	printf( __( '<span class="%1$s">Posted on</span> %2$s <span class="meta-sep">by</span> %3$s', 'philia' ),
 		'meta-prep meta-prep-author',
 		sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><span class="entry-date">%3$s</span></a>',
 			get_permalink(),
@@ -366,21 +366,21 @@ function sutra_posted_on() {
 		),
 		sprintf( '<span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s">%3$s</a></span>',
 			get_author_posts_url( get_the_author_meta( 'ID' ) ),
-			sprintf( esc_attr__( 'View all posts by %s', 'sutra' ), get_the_author() ),
+			sprintf( esc_attr__( 'View all posts by %s', 'philia' ), get_the_author() ),
 			get_the_author()
 		)
 	);
 }
 
-function sutra_posted_in() {
+function philia_posted_in() {
 	// Retrieves tag list of current post, separated by commas.
 	$tag_list = get_the_tag_list( '', ', ' );
 	if ( $tag_list ) {
-		$posted_in = __( 'This entry was posted in %1$s and tagged %2$s. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'sutra' );
+		$posted_in = __( 'This entry was posted in %1$s and tagged %2$s. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'philia' );
 	} elseif ( is_object_in_taxonomy( get_post_type(), 'category' ) ) {
-		$posted_in = __( 'This entry was posted in %1$s. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'sutra' );
+		$posted_in = __( 'This entry was posted in %1$s. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'philia' );
 	} else {
-		$posted_in = __( 'Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'sutra' );
+		$posted_in = __( 'Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'philia' );
 	}
 	// Prints the string, replacing the placeholders.
 	printf(
@@ -407,7 +407,7 @@ function add_body_class( $classes )
 add_filter( 'body_class', 'add_body_class' );
 
 //Pagination 
-function sutra_navigation(){
+function philia_navigation(){
 	global $wp_query, $wp_rewrite;
 	$wp_query->query_vars['paged'] > 1 ? $current = $wp_query->query_vars['paged'] : $current = 1;
 	

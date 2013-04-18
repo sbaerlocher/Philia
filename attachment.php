@@ -19,9 +19,9 @@
 <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 
 				<?php if ( ! empty( $post->post_parent ) ) : ?>
-					<p class="page-title"><a href="<?php echo get_permalink( $post->post_parent ); ?>" title="<?php esc_attr( printf( __( 'Return to %s', 'sutra' ), get_the_title( $post->post_parent ) ) ); ?>" rel="gallery"><?php
+					<p class="page-title"><a href="<?php echo get_permalink( $post->post_parent ); ?>" title="<?php esc_attr( printf( __( 'Return to %s', 'philia' ), get_the_title( $post->post_parent ) ) ); ?>" rel="gallery"><?php
 						/* translators: %s - title of parent post */
-						printf( __( '<span class="meta-nav">&larr;</span> %s', 'sutra' ), get_the_title( $post->post_parent ) );
+						printf( __( '<span class="meta-nav">&larr;</span> %s', 'philia' ), get_the_title( $post->post_parent ) );
 					?></a></p>
 				<?php endif; ?>
 
@@ -30,18 +30,18 @@
 
 					<div class="entry-meta">
 						<?php
-							printf(__('<span class="%1$s">By</span> %2$s', 'sutra'),
+							printf(__('<span class="%1$s">By</span> %2$s', 'philia'),
 								'meta-prep meta-prep-author',
 								sprintf( '<span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s">%3$s</a></span>',
 									get_author_posts_url( get_the_author_meta( 'ID' ) ),
-									sprintf( esc_attr__( 'View all posts by %s', 'sutra' ), get_the_author() ),
+									sprintf( esc_attr__( 'View all posts by %s', 'philia' ), get_the_author() ),
 									get_the_author()
 								)
 							);
 						?>
 						<span class="meta-sep">|</span>
 						<?php
-							printf( __('<span class="%1$s">Published</span> %2$s', 'sutra'),
+							printf( __('<span class="%1$s">Published</span> %2$s', 'philia'),
 								'meta-prep meta-prep-entry-date',
 								sprintf( '<span class="entry-date"><abbr class="published" title="%1$s">%2$s</abbr></span>',
 									esc_attr( get_the_time() ),
@@ -51,17 +51,17 @@
 							if ( wp_attachment_is_image() ) {
 								echo ' <span class="meta-sep">|</span> ';
 								$metadata = wp_get_attachment_metadata();
-								printf( __( 'Full size is %s pixels', 'sutra'),
+								printf( __( 'Full size is %s pixels', 'philia'),
 									sprintf( '<a href="%1$s" title="%2$s">%3$s &times; %4$s</a>',
 										wp_get_attachment_url(),
-										esc_attr( __('Link to full-size image', 'sutra') ),
+										esc_attr( __('Link to full-size image', 'philia') ),
 										$metadata['width'],
 										$metadata['height']
 									)
 								);
 							}
 						?>
-						<?php edit_post_link( __( 'Edit', 'sutra' ), '<span class="meta-sep">|</span> <span class="edit-link">', '</span>' ); ?>
+						<?php edit_post_link( __( 'Edit', 'philia' ), '<span class="meta-sep">|</span> <span class="edit-link">', '</span>' ); ?>
 					</div><!-- .entry-meta -->
 
 					<div class="entry-content">
@@ -87,7 +87,7 @@
 	}
 ?>
 						<p class="attachment"><a href="<?php echo $next_attachment_url; ?>" title="<?php echo esc_attr( get_the_title() ); ?>" rel="attachment"><?php
-							$attachment_size = apply_filters( 'sutra_attachment_size', 900 );
+							$attachment_size = apply_filters( 'philia_attachment_size', 900 );
 							echo wp_get_attachment_image( $post->ID, array( $attachment_size, 9999 ) ); // filterable image width with, essentially, no limit for image height.
 						?></a></p>
 
