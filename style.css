@@ -1347,6 +1347,7 @@ footer {
 	/* forms full width */
 	input[type="text"],
 	.wpcf7 input[type="text"],
+	.wpcf7 input[type="email"],
 	textarea,
 	.wpcf7 textarea{
 		width: 100%;
