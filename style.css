@@ -1203,27 +1203,21 @@ h3#reply-title {
 }
 
 /* -- Footer -- */
-#site-info {
+.site-info {
 	float: right;
 	text-align: right;
 	font-size: .8em;
 	font-weight: bold;
-	width: 40%;
+	width: 60%;
+	overflow: hidden;
+	padding: 1em 0;
 }
-#footer {
+footer {
 	border-top: 1px solid #d5d5d5;
 	border-top: 1px solid rgba(0,0,0,0.2);	
 	margin-bottom: 2em;
 }
-#colophon {
-	overflow: hidden;
-	padding: 1em 0;
-}
-#site-info {
-	font-weight: bold;
-}
-#site-info a {
-	color: #444;
+.site-info a {
 	text-decoration: none;
 }
 
