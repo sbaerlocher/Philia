@@ -73,6 +73,7 @@ Internet Explorer 8,9,10
 === Release Notes Philia ===
 
 Version 1.0 Philia is Startet
+Version 1.1 Philia gets social media profile links
 
 === Release Notes Sutra ===
 
