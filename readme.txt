@@ -1,3 +1,13 @@
+=== Philia 1.0 ===
+Contributors:  Simon Baerlocher
+Donate link:  http://sbaerlocher.ch
+Tags: two-columns, light, featured-images, fixed-width, custom-menu
+Requires: 3.0
+Tested up to: 3.5.1
+
+Minimal theme focussed on simplicity, putting your writing front and center.
+
+This is a fork of Sutra
 === Sutra 2.1.1 ===
 Contributors:  maikunari
 Donate link:  http://maikunari.com
@@ -60,17 +70,20 @@ Tested in Firefox 20
 Safari 6
 Internet Explorer 8,9,10
 
+=== Release Notes Philia ===
 
-=== Release Notes ===
+Version 1.0 Philia is Startet
 
-Version 2.1.1
+=== Release Notes Sutra ===
+
+Version 2.1.1 Sutra
 - Removed .git directory
 
-Version 2.1
+Version 2.1 Sutra
 - Updated theme description.
 
 
-Version 2.0:
+Version 2.0 Sutra:
 - Major Update
 - added responsive styles & select menu.
 - removed social sharing features from posts, Jetpack handles it much better.
@@ -82,24 +95,24 @@ Version 2.0:
 - updated form input styles.
 
 
-Version 1.1.5 :
+Version 1.1.5 Sutra:
 - New submit button & form styling.
 - Default styles for Contact Form 7 plugin: http://wordpress.org/extend/plugins/contact-form-7/ 
 - Added borders & css3 drop shadows on comment avatars.
 - Removed underline from links.
 
 
-Version 1.1.4 : 
+Version 1.1.4 Sutra: 
 - Removed fixed sidebar & header, fixed some css that caused problems on smaller screen sizes.  
 - Changed the_excerpt for the_content on main content loop. 
 - Moved social icons to below content rather than above.
 
 
-Version 1.1.3 - Screenshot update
-Version 1.1.2 - Final fix for Codex Approval
-Version 1.1.1 - Updates to functions & search fix.
-Version 1.1 - Replace Pagination code
-Version 1.0 - Initial Release
+Version 1.1.3 Sutra - Screenshot update
+Version 1.1.2 Sutra - Final fix for Codex Approval
+Version 1.1.1 Sutra - Updates to functions & search fix.
+Version 1.1 Sutra - Replace Pagination code
+Version 1.0 Sutra - Initial Release
 
 
 === Support ===

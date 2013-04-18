@@ -48,6 +48,18 @@
 <?php wp_head(); ?>
 </head>
 
+<?php
+	$options = philia_get_theme_options();
+	if ( 'off' == $options['show_rss_link']
+		&& ''  == $options['twitter_url']
+		&& ''  == $options['facebook_url']
+		&& ''  == $options['google_url']
+		&& ''  == $options['flickr_url']
+		&& ! is_active_sidebar( 'sidebar-1' )
+	)
+		return;
+?>
+
 <body <?php body_class(); ?>>
 <div id="wrapper" class="hfeed">
 	<div id="main">
@@ -59,7 +71,48 @@
 			if ( ! empty( $header_image ) ) : ?>
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo esc_url( $header_image ); ?>" class="header-image" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="" /></a>
 			<?php endif; ?>
-			
+			<div id="syndicate">
+						<?php if ( 'off' != $options['show_rss_link'] ) : ?>
+							<li><a class="rss-link" href="<?php echo get_feed_link( 'rss2' ); ?>" title="<?php esc_attr_e( 'RSS', 'sundance' ); ?>"><span><?php _e( 'RSS Feed', 'sundance' ); ?></span></a></li>
+						<?php endif; ?>
+
+						<?php if ( ''!= $options['facebook_url'] ) : ?>
+							<li><a class="facebook-link" href="<?php echo esc_url( $options['facebook_url'] ); ?>" title="<?php esc_attr_e( 'Facebook', 'sundance' ); ?>"><span><?php _e( 'Facebook', 'sundance' ); ?></span></a></li>
+						<?php endif; ?>
+
+						<?php if ( ''!= $options['twitter_url'] ) : ?>
+							<li><a class="twitter-link" href="<?php echo esc_url( $options['twitter_url'] ); ?>" title="<?php esc_attr_e( 'Twitter', 'sundance' ); ?>"><span><?php _e( 'Twitter', 'sundance' ); ?></span></a></li>
+						<?php endif; ?>
+
+						<?php if ( ''!= $options['google_url'] ) : ?>
+							<li><a class="google-link" href="<?php echo esc_url( $options['google_url'] ); ?>" title="<?php esc_attr_e( 'Google+', 'sundance' ); ?>"><span><?php _e( 'Google Plus', 'sundance' ); ?></span></a></li>
+						<?php endif; ?>
+
+						<?php if ( ''!= $options['gravatar_url'] ) : ?>
+							<li><a class="gravatar-link" href="<?php echo esc_url( $options['gravatar_url'] ); ?>" title="<?php esc_attr_e( 'Gravatar', 'sundance' ); ?>"><span><?php _e( 'Gravatar', 'sundance' ); ?></span></a></li>
+						<?php endif; ?>
+
+						<?php if ( ''!= $options['github_url'] ) : ?>
+							<li><a class="github-link" href="<?php echo esc_url( $options['github_url'] ); ?>" title="<?php esc_attr_e( 'Github', 'sundance' ); ?>"><span><?php _e( 'Github', 'sundance' ); ?></span></a></li>
+						<?php endif; ?>
+
+						<?php if ( ''!= $options['linkedin_url'] ) : ?>
+							<li><a class="linkedin-link" href="<?php echo esc_url( $options['linkedin_url'] ); ?>" title="<?php esc_attr_e( 'Linkedin', 'sundance' ); ?>"><span><?php _e( 'Linkedin', 'sundance' ); ?></span></a></li>
+						<?php endif; ?>
+
+						<?php if ( ''!= $options['pinterest_url'] ) : ?>
+							<li><a class="pinterest-link" href="<?php echo esc_url( $options['pinterest_url'] ); ?>" title="<?php esc_attr_e( 'Pinterest', 'sundance' ); ?>"><span><?php _e( 'Pinterest', 'sundance' ); ?></span></a></li>
+						<?php endif; ?>
+
+						<?php if ( ''!= $options['bitbucket_url'] ) : ?>
+							<li><a class="bitbucket-link" href="<?php echo esc_url( $options['bitbucket_url'] ); ?>" title="<?php esc_attr_e( 'bitbucket', 'sundance' ); ?>"><span><?php _e( 'bitbucket', 'sundance' ); ?></span></a></li>
+						<?php endif; ?>
+
+						<?php if ( ''!= $options['skype_url'] ) : ?>
+							<li><a class="skype-link" href="<?php echo esc_url( $options['skype_url'] ); ?>" title="<?php esc_attr_e( 'bitbucket', 'sundance' ); ?>"><span><?php _e( 'bitbucket', 'sundance' ); ?></span></a></li>
+						<?php endif; ?>
+
+				</div>
 			<?php // mobile menu 
 		    wp_nav_menu( array( 
 		    	'theme_location' => 'primary', 

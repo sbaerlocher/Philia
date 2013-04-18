@@ -1,13 +1,13 @@
 /*
-Theme Name: Sutra
-Author: Mike Sewell
-Author URI: http://maikunari.com
-Theme URI: http://maikunari.com/sutra
-Description: Responsive minimal theme focussed on simplicity, putting your writing front and center.
+Theme Name: Philia
+Author: Simon Bärlocher
+Author URI: http://sbaerlocher.ch
+Theme URI: http://sbaerlocher.ch/philia
+Description: Ist mit Viel liebe gemacht. 
 License: GNU General Public License
 License URI: license.txt
 Tags: two-columns, light, featured-images, fixed-width, custom-menu
-Version: 2.1.1
+Version: Beta
 */
 
 /* = CONTENTS
@@ -285,6 +285,81 @@ h1#site-title {
 	text-shadow: 0 1px 0 #fff;
 }
 
+/* -- Header Social Links -- */
+#syndicate {
+	margin: 3% 0 0 0;
+}
+
+#syndicate ul {
+	list-style: none;
+	margin: 0 0 0.933333333em 0;
+	overflow: hidden;
+}
+
+#syndicate li {
+	list-style: none;
+	float: left;
+	margin: 0 3.35% 0.933333333em 0;
+}
+
+#syndicate li:last-child {
+	margin-right: 0;
+}
+
+#syndicate span {
+	display: none;
+	line-height: 0;
+}
+
+#syndicate li a {
+	display: block;
+	height: 28px;
+	width: 28px;
+}
+
+#syndicate li a:hover {
+	opacity: 0.8;
+}
+
+#syndicate li a.rss-link {
+	background: url(images/social-links-ico/rss-ico.gif) no-repeat 0 0;
+}
+
+#syndicate li a.facebook-link {
+	background: url(images/social-links-ico/facebook-ico.gif) no-repeat 0 0;
+}
+
+#syndicate li a.twitter-link {
+	background: url(images/social-links-ico/twitter-ico.gif) no-repeat 0 0;
+}
+
+#syndicate li a.google-link {
+	background: url(images/social-links-ico/google-ico.gif) no-repeat 0 0;
+}
+
+#syndicate li a.gravatar-link {
+	background: url(images/social-links-ico/gravatar-ico.gif) no-repeat 0 0;
+}
+
+#syndicate li a.github-link {
+	background: url(images/social-links-ico/github-ico.gif) no-repeat 0 0;
+}
+
+#syndicate li a.linkedin-link {
+	background: url(images/social-links-ico/linkedin-ico.gif) no-repeat 0 0;
+}
+
+#syndicate li a.pinterest-link {
+	background: url(images/social-links-ico/pinterest-ico.gif) no-repeat 0 0;
+}
+
+#syndicate li a.bitbucket-link {
+	background: url(images/social-links-ico/bitbucket-ico.gif) no-repeat 0 0;
+}
+
+#syndicate li a.skype-link {
+	background: url(images/social-links-ico/skype-ico.gif) no-repeat 0 0;
+}
 
 /* -- Content -- */
 #main {
