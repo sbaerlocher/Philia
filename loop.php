@@ -1,3 +1,10 @@
+<?php
+/**
+ *
+ * @package Philia
+ */
+?>
+
 <?php /* If there are no posts to display, such as an empty archive page */ ?>
 <?php if ( ! have_posts() ) : ?>
 	<div id="post-0" class="post error404 not-found">

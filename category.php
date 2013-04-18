@@ -1,4 +1,10 @@
-<?php get_header(); ?>
+<?php
+/**
+ * @package Philia
+ * @since Philia
+ */
+
+ get_header(); ?>
 
 		<div id="container">
 			<div id="content" role="main">

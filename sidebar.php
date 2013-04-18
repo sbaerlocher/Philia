@@ -1,3 +1,11 @@
+<?php
+/**
+ * The Sidebar containing the main widget areas.
+ *
+ * @package Philia
+ * @since Philia
+ */
+?>
 
 		<div id="sidebar" class="widget-area" role="complementary">
 			<ul class="xoxo">

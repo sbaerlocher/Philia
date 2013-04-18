@@ -1,4 +1,12 @@
-<?php get_header(); ?>
+<?php
+/**
+ * The template for displaying 404 pages (Not Found).
+ *
+ * @package Philia
+ * @since Philia
+ */
+
+get_header(); ?>
 
 	<div id="container">
 		<div id="content" role="main">

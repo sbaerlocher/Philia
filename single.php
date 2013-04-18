@@ -1,4 +1,12 @@
-<?php get_header(); ?>
+<?php
+/**
+ * The Template for displaying all single posts.
+ *
+ * @package Philia
+ * @since Philia
+ */
+
+ get_header(); ?>
 
 		<div id="container">
 			<div id="content" role="main">
