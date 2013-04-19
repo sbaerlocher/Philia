@@ -1,4 +1,4 @@
-=== Philia 1.0 ===
+=== Philia 1.2 ===
 Contributors:  Simon Baerlocher
 Donate link:  http://sbaerlocher.ch
 Tags: two-columns, light, featured-images, fixed-width, custom-menu
@@ -74,6 +74,8 @@ Internet Explorer 8,9,10
 
 Version 1.0 Philia is Startet
 Version 1.1 Philia gets social media profile links
+Version 1.2 Shift of the social media profile in the sidebar
+
 
 === Release Notes Sutra ===
 
