@@ -229,6 +229,16 @@ function philia_widgets_init() {
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
 	) );
+
+	register_sidebar( array(
+		'name' => __( 'Widgets', 'philia' ),
+		'id' => 'primary-footer-area',
+		'description' => __( 'The footer widget area', 'philia' ),
+		'before_widget' => '',
+		'after_widget' => '',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+	) );
 }
 
 // Register sidebars by running philia_widgets_init() on the widgets_init hook. 

@@ -1,6 +1,6 @@
 <?php
 /**
- * Philia Theme Options
+ * Philia Social Links
  *
  * @package Philia
  * @since Philia 1.0
@@ -76,7 +76,7 @@ function philia_option_page_capability( $capability ) {
 add_filter( 'option_page_capability_philia_options', 'philia_option_page_capability' );
 
 /**
- * Add our theme options page to the admin menu, including some help documentation.
+ * Add our Social Links page to the admin menu, including some help documentation.
  *
  * This function is attached to the admin_menu action hook.
  *
@@ -84,8 +84,8 @@ add_filter( 'option_page_capability_philia_options', 'philia_option_page_capabil
  */
 function philia_theme_options_add_page() {
 	$theme_page = add_theme_page(
-		__( 'Theme Options', 'philia' ), // Name of page
-		__( 'Theme Options', 'philia' ), // Label in menu
+		__( 'Social Links', 'philia' ), // Name of page
+		__( 'Social Links', 'philia' ), // Label in menu
 		'edit_theme_options', // Capability required
 		'theme_options', // Menu slug, used to uniquely identify the page
 		'philia_theme_options_render_page' // Function that renders the options page
@@ -243,7 +243,7 @@ function philia_theme_options_render_page() {
 	<div class="wrap">
 		<?php screen_icon(); ?>
 		<?php $theme_name = function_exists( 'wp_get_theme' ) ? wp_get_theme() : get_current_theme(); ?>
-		<h2><?php printf( __( '%s Theme Options', 'philia' ), $theme_name ); ?></h2>
+		<h2><?php printf( __( '%s Social Link', 'philia' ), $theme_name ); ?></h2>
 		<?php settings_errors(); ?>
 
 		<form method="post" action="options.php">
