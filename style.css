@@ -291,7 +291,7 @@ h1#site-title {
 	margin: 3% 0 0 0;
 }
 
-#syndicate ul {
+#syndicate ul {width: 100%;
 	list-style: none;
 	margin: 0 0 0.933333333em 0;
 	overflow: hidden;
@@ -1348,11 +1348,15 @@ footer {
 	input[type="text"],
 	.wpcf7 input[type="text"],
 	.wpcf7 input[type="email"],
+	.syndicate,
 	textarea,
 	.wpcf7 textarea{
 		width: 100%;
 	}
-
+	#syndicate li {
+		list-style: none;
+		margin: 0 1.40% 0 0;
+	}
 	/* webkit tweak */
 	body {
 		-webkit-text-size-adjust: 111%;
