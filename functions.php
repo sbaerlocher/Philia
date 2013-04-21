@@ -229,16 +229,6 @@ function philia_widgets_init() {
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
 	) );
-
-	register_sidebar( array(
-		'name' => __( 'Widgets', 'philia' ),
-		'id' => 'primary-footer-area',
-		'description' => __( 'The footer widget area', 'philia' ),
-		'before_widget' => '',
-		'after_widget' => '',
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
-	) );
 }
 
 // Register sidebars by running philia_widgets_init() on the widgets_init hook. 
@@ -437,25 +427,4 @@ function philia_navigation(){
 		$pagination['add_args'] = array( 's' => get_query_var( 's' ) );
 	
 	echo paginate_links( $pagination );
-}
-
-//theme-option Soical Profil Links
-function philia_set_content_width() {
-	$options = philia_get_theme_options();
-	global $content_width;
-	if ( is_page_template( 'full-width-page.php' )
-		|| is_attachment()
-		|| ( 'off' == $options['show_rss_link']
-			&& ''  == $options['twitter_url']
-			&& ''  == $options['facebook_url']
-			&& ''  == $options['google_url']
-			&& ''  == $options['gravatar_url']
-			&& ''  == $options['github_url']
-			&& ''  == $options['linkedin_url']
-			&& ''  == $options['pinterest_url']
-			&& ''  == $options['share_url']
-			&& ''  == $options['skype_url']
-			&& ! is_active_sidebar( 'sidebar-1' ) )
-		)
-		$content_width = 874;
 }
